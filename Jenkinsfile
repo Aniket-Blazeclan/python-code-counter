@@ -11,6 +11,7 @@ pipeline {
                 stage('Checkout Code') {
                     steps {
                     git branch: "${BRANCH_NAME}",
+                    credentialsId: 'github-app',
                     url: 'https://github.com/Aniket-Blazeclan/python-code-counter.git'
                     }
                 }

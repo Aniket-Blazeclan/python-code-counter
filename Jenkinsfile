@@ -17,7 +17,7 @@ pipeline {
                 }
                 stage('Image Build Docker') {
                     steps {
-                    sh 'docker build -t python-code:v1 .'    
+                    sh 'sudo docker build -t python-code:v1 .'    
                     }
                 }
 

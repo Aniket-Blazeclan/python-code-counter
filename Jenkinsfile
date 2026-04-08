@@ -15,6 +15,11 @@ pipeline {
                     url: 'https://github.com/Aniket-Blazeclan/python-code-counter.git'
                     }
                 }
+                stage('Image Build Docker') {
+                    steps {
+                    sh 'docker build -t python-code:v1 .'    
+                    }
+                }
 
 
         }

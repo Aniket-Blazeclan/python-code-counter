@@ -24,12 +24,12 @@ jobs:
       uses: docker/login-action@v3
       with: 
         username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER.PASSWORD }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: BUILD Docker images
       run: |
-        docker build -t demo:v1 .
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/github-actions-demo:v1 .
 
     - name: push docker image
       run: |
-        docker push demo:v1
+        docker push ${{ secrets.DOCKER_USERNAME }}/github-actions-demo:v1

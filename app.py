@@ -1,13 +1,8 @@
-from fastapi import FastAPI
-import uvicorn
+# app.py
+# This is a test commit
+def add(a, b):
+    return a + b
 
-app = FastAPI()
-
-@app.get("/health")
-def health_check():
-    """Endpoint to check service health."""
-    return {"status": "ok", "message": "API is running"}
-
-if __name__ == "__main__":
-    # Run the API locally
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+def test_add():
+    assert add(1, 2) == 3
+    assert add(1, -1) == 0
